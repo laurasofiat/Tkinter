@@ -1,14 +1,14 @@
-import Tkinter as tk #Importa la librería tkinter
+import tkinter as tk #Importa la librería tkinter
 ventana=tk.Tk() #Crea la venta en la librería
 ventana.title("Calculadora con Tkinter") #Crea el título de la ventana
-ventana.geometry("400*300") #Da las medidas de la ventana
-entrada=tk.Entry(ventana,width=20,font=("Arial",18),justify="right") #crea el ancho (width) de entradas,el tipo de letra, su tamaño y su posición
-entrada.grid(row=0,columnspan=4,padx=10,pady=10) #Ubica la rejilla, sus posiciones y sus espacios (padx y pady)
+ventana.geometry("400x300") #Da las medidas de la ventana
+entrada=tk.Entry(ventana, width=20, font=("Arial",18),justify="right") #crea el ancho (width) de entradas,el tipo de letra, su tamaño y su posición
+entrada.grid(row=0, columnspan=4, padx=10, pady=10) #Ubica la rejilla, sus posiciones y sus espacios (padx y pady)
 botones=[ #Posicion de los botones en la calculadora
-    ("7",1,0)("8",1,1)("9",1,2)("/",1,3),
-    ("4",2,0)("5",2,1)("6",2,2)("*",2,3),
-    ("1",3,0)("2",3,1)("3",3,2)("-",3,3),
-    ("0",4,0)(".",4,1)("+",4,2)("=",4,3)
+    ("7",1,0),("8",1,1),("9",1,2),("/",1,3),
+    ("4",2,0),("5",2,1),("6",2,2),("*",2,3),
+    ("1",3,0),("2",3,1),("3",3,2),("-",3,3),
+    ("0",4,0),(".",4,1),("+",4,2),("=",4,3)
 ]
 def calcular(): #Función para calcular el resultado
     try:
@@ -27,8 +27,8 @@ def calcular(): #Función para calcular el resultado
 def borrar(): #Función para borrar los datos ingresados
     entrada.delete(0, tk.END) #Borra el dato ingresado en la calculadora
 
-def click_boton(valor): #Función para los botones de la calculadora
-    entrada.insert(0, valor) #Inserta el valor del botón presionado en la entrada
+def click_boton(numero): #Función para los botones de la calculadora
+    entrada.insert(0, numero) #Inserta el valor del botón presionado en la entrada
 
 for(texto,fila, columna)in botones: #recorre los botones para obtener su texto, fila y columna
     if texto=="=": #si el texto es igual a "="
